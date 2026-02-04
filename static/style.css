@@ -1,52 +1,130 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Gradient Background */
 body {
-    background-color: #121212;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f4037, #99f2c8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1.2s ease-in;
 }
 
+/* Main Card */
 .container {
-    width: 350px;
-    margin: 80px auto;
-    padding: 25px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
+    background: rgba(30, 30, 30, 0.95);
+    padding: 35px;
+    width: 380px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.9s ease;
 }
 
+/* Heading */
 h1 {
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
-label {
-    margin-top: 10px;
-    display: block;
+.subtitle {
+    text-align: center;
+    color: #bdbdbd;
+    font-size: 14px;
+    margin-bottom: 30px;
 }
 
-input {
+/* Input Group */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-group input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: none;
+    padding: 12px 10px;
+    background: transparent;
+    border: 1px solid #555;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
 }
 
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #aaa;
+    font-size: 14px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Floating Label Effect */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    background: #1e1e1e;
+    padding: 0 6px;
+    font-size: 12px;
+    color: #99f2c8;
+}
+
+/* Button */
 button {
     width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #4caf50;
-    color: white;
+    padding: 12px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
 }
 
+/* Result Box */
 .result {
-    margin-top: 20px;
+    margin-top: 25px;
+    padding: 12px;
     text-align: center;
-    font-weight: bold;
+    background: rgba(153, 242, 200, 0.15);
+    border-radius: 6px;
+    color: #99f2c8;
+    font-weight: 600;
+    animation: fadeIn 0.6s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
