@@ -21,3 +21,9 @@ attendance, and internal marks.
 
 ## Deployment
 The application is deployed on AWS EC2.
+
+## Screenshots
+
+![Home Page](screenshots/home.png)
+![Result](screenshots/result_v2.png)
+
